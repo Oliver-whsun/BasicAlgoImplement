@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class MinimumEditDistance{
 	int[][] initDpArray(String wordA, String wordB){
 		int lenA = wordA.length();
@@ -27,10 +29,28 @@ public class MinimumEditDistance{
 		return dp;
 	}
 
+	int[][] inferDpArray(int[][] dp, String wordA, String wordB){
+		int lenA = wordA.length();
+		int lenB = wordB.length();
+		for(int i=1; i<lenA; i++){
+			for(int j=1; j<lenB; j++){
+				int situation1, situation2, situation3 = Integer.MAX_VALUE;
+				situation1 = dp[i-1][j] +1;
+				situation2 = dp[i][j-1] +1;
+				situation3 = wordA.charAt(i)==wordB.charAt(j) ? dp[i-1][j-1] : dp[i-1][j-1] +2;
+				dp[i][j] = Math.min(Math.min(situation1,situation2),situation3);
+			}
+		}
+		return dp;
+	}
+
 	public static void main(String[] args){
 		MinimumEditDistance med = new MinimumEditDistance();
-		String wordA = args[1];
-		String wordB = args[2];
+		String wordA = args[0];
+		String wordB = args[1];
 		int[][] dp = med.initDpArray(wordA,wordB);
+		dp = med.inferDpArray(dp,wordA,wordB);
+		int res = dp[wordA.length()-1][wordB.length()-1];
+		System.out.println("The MinimumEditDistance between "+wordA+" and "+wordB+" is "+res);
 	}
 }
