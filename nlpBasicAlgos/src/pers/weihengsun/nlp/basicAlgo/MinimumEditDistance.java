@@ -1,6 +1,6 @@
-import java.util.*;
+package pers.weihengsun.nlp.basicAlgo;
 
-public class MinimumEditDistance{
+public class MinimumEditDistance {
 	int[][] initDpArray(String wordA, String wordB){
 		int lenA = wordA.length();
 		int lenB = wordB.length();
