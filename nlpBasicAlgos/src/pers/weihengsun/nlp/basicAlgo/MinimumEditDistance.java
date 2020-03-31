@@ -16,12 +16,12 @@ public class MinimumEditDistance {
 				}else dp[i][0] = dp[i-1][0] + 1;
 			}
 		}
-		boolean metSameCharJ = wordA.charAt(0)==wordB.charAt(0);
+//		boolean metSameCharJ = wordA.charAt(0)==wordB.charAt(0);
 		for(int j=1; j<lenB; j++){
 			if(metSameCharI) dp[0][j] = dp[0][j-1] + 1;
 			else{
 				if(wordA.charAt(0)==wordB.charAt(j)){
-					metSameCharJ = true;
+//					metSameCharJ = true;
 					dp[0][j] = dp[0][j-1] - 1;
 				}else dp[0][j] = dp[0][j-1] + 1;
 			}
