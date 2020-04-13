@@ -27,5 +27,13 @@ public class Features<E extends Number> {
 		return values;
 	}
 	
-	
+	@Override
+	public String toString() {
+		String res = "dimension="+dimension+";\t"+"valuese:[";
+		for(E curVal : values) {
+			res += curVal + ", ";
+		}
+		res += "]";
+		return res;
+	}
 }
