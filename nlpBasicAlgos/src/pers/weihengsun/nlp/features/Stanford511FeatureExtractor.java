@@ -125,7 +125,7 @@ public class Stanford511FeatureExtractor extends AbstractFeatureExtractor {
 	
 	/**
 	 * @param input
-	 * @return 1 if "no" belongs to input, otherwize 0
+	 * @return 1 if "no" belongs to input, otherwise 0
 	 */
 	private Double calF3(String[] input) {
 		for(String aWord : input) {
@@ -148,7 +148,7 @@ public class Stanford511FeatureExtractor extends AbstractFeatureExtractor {
 	
 	/**
 	 * @param input
-	 * @return 1 if "!" belongs to input, otherwize 0
+	 * @return 1 if "!" belongs to input, otherwise 0
 	 */
 	private Double calF5(String[] input) {
 		for(String aWord : input) {
