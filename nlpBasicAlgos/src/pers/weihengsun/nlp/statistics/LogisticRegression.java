@@ -7,27 +7,27 @@ public class LogisticRegression {
 
 	private double[] weights;
 	private double bias;
-	private double learningRate = 0.1;
+	private double learningRate = 0.0001;
 	
 	/**
 	 * Constructor when given a dimension, set weights and bias to 0.0 
 	 * @param dimension
 	 */
-	LogisticRegression(int dimension){
+	public LogisticRegression(int dimension){
 		weights = new double[dimension];
 		bias = 0.0;
 	}
 	/**
 	 * Constructor when given the values of weights and bias in one array
 	 */
-	LogisticRegression(double[] weightsAndBias){
+	public LogisticRegression(double[] weightsAndBias){
 		weights = Arrays.copyOfRange(weightsAndBias, 0, weightsAndBias.length-1);
 		bias = weightsAndBias[weightsAndBias.length-1];
 	}
 	/**
 	 * Constructor when given the values of weights and bias separated
 	 */
-	LogisticRegression(double[] weights, double bias){
+	public LogisticRegression(double[] weights, double bias){
 		this.weights = weights.clone();
 		this.bias = bias;
 	}

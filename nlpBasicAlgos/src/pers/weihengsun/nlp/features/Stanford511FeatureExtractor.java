@@ -17,7 +17,7 @@ import java.util.Set;
  * @author weiheng.sun
  *
  */
-public class Stanford511FeatureExtractor extends AbstractFeatureExtractor {
+public class Stanford511FeatureExtractor extends FeatureExtractor {
 	
 	private final String LEXICON_FILE_PATH = "./dictionary/opinion_lexicon/";
 	private final String LANGUAGE_CODE = "en";
@@ -40,7 +40,7 @@ public class Stanford511FeatureExtractor extends AbstractFeatureExtractor {
 	
 	@Override
 	public Features<Double> extractFeatures(String[] input) {
-		Double[] values = new Double[this.featureDimension];
+		Double[] values = new Double[this.getDimension()];
 		values[0] = calF1(input);
 		values[1] = calF2(input);
 		values[2] = calF3(input);
